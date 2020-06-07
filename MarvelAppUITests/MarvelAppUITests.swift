@@ -10,28 +10,53 @@ import XCTest
 
 class MarvelAppUITests: XCTestCase {
 
+    let app = XCUIApplication()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        app.launch()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitialViewsExist() throws {
+        
+        XCTAssert(app.navigationBars["Marvel Heroes"].exists)
+        XCTAssert(app.activityIndicators.element.isEnabled)
+        XCTAssert(app.tables.element(matching: .table, identifier: "mainTableView").exists)
     }
 
+    func testTableViewCells() throws {
+        
+        sleep(2) //wait for the tableview items to load
+        
+        let mainTableView = app.tables.element(matching: .table, identifier: "mainTableView")
+        let tableCells = mainTableView.cells
+
+        XCTAssertEqual(tableCells.count, 20) //Default number of items
+    }
+
+    func testDetailViewsExist() {
+        
+        sleep(2) //wait fo tableview to load
+        
+        //tap the first cell
+        app.tables.cells.element(boundBy: 0).tap()
+                
+        XCTAssert(app.tables.otherElements["Name"].exists)
+        XCTAssert(app.tables.otherElements["Image"].exists)
+        XCTAssert(app.tables.otherElements["Description"].exists)
+        
+        app.swipeUp()
+        
+        XCTAssert(app.tables.otherElements["Comics"].exists)
+        XCTAssert(app.tables.otherElements["Series"].exists)
+        XCTAssert(app.tables.otherElements["Stories"].exists)
+        XCTAssert(app.tables.otherElements["Events"].exists)
+    }
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
