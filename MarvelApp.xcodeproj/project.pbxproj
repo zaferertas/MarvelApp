@@ -30,6 +30,7 @@
 		8867E984248936FE00F2648D /* MasterViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8867E981248936FE00F2648D /* MasterViewModelTest.swift */; platformFilter = ios; };
 		8867E985248936FE00F2648D /* MarvelApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8867E982248936FE00F2648D /* MarvelApiServiceTest.swift */; platformFilter = ios; };
 		8867E986248936FE00F2648D /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8867E983248936FE00F2648D /* MockApiService.swift */; platformFilter = ios; };
+		88C21FE2248D49670046CF7B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 88C21FE1248D49670046CF7B /* README.md */; };
 		DFA252A91E2DC3DBDAA065D8 /* Pods_MarvelApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A88615E195BEB781D36682 /* Pods_MarvelApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		88C21FDB248C20C80046CF7B /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C21FDD248C20C80046CF7B /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C21FDF248C24EE0046CF7B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C21FE1248D49670046CF7B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C859ECE32015037F38E36704 /* Pods-MarvelApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelApp.release.xcconfig"; path = "Target Support Files/Pods-MarvelApp/Pods-MarvelApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 		8867E92424892D3200F2648D = {
 			isa = PBXGroup;
 			children = (
+				88C21FE1248D49670046CF7B /* README.md */,
 				8867E92F24892D3200F2648D /* MarvelApp */,
 				8867E94624892D3300F2648D /* MarvelAppTests */,
 				8867E95124892D3300F2648D /* MarvelAppUITests */,
@@ -397,6 +400,7 @@
 			files = (
 				8867E97F2489350F00F2648D /* Main.storyboard in Resources */,
 				8867E93D24892D3200F2648D /* LaunchScreen.storyboard in Resources */,
+				88C21FE2248D49670046CF7B /* README.md in Resources */,
 				8867E93A24892D3200F2648D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

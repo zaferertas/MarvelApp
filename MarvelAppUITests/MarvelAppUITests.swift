@@ -1,10 +1,3 @@
-//
-//  MarvelAppUITests.swift
-//  MarvelAppUITests
-//
-//  Created by zafer ertas on 4.06.2020.
-//  Copyright © 2020 zafer ertas. All rights reserved.
-//
 
 import XCTest
 
