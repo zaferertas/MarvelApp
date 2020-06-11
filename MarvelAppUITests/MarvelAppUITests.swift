@@ -23,20 +23,20 @@ class MarvelAppUITests: XCTestCase {
 
     func testTableViewCells() throws {
         
-        sleep(2) //wait for the tableview items to load
-        
         let mainTableView = app.tables.element(matching: .table, identifier: "mainTableView")
         let tableCells = mainTableView.cells
 
+        XCTAssertTrue(mainTableView.waitForExistence(timeout: 10))
+        
         XCTAssertEqual(tableCells.count, 20) //Default number of items
     }
 
     func testDetailViewsExist() {
         
-        sleep(2) //wait fo tableview to load
+        let cell = app.tables.cells.firstMatch
+        XCTAssertTrue(cell.waitForExistence(timeout: 10))
         
-        //tap the first cell
-        app.tables.cells.element(boundBy: 0).tap()
+        cell.tap()
                 
         XCTAssert(app.tables.otherElements["Name"].exists)
         XCTAssert(app.tables.otherElements["Image"].exists)
